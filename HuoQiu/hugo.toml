@@ -1,17 +1,17 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My website'
+title = 'HuoQiu Tech'
 theme = 'typo'
 
 [taxonomies]
 tag = 'tags'
 
 # Google analytics code
-googleAnalytics = "G-xxxxxxxxx"
+# googleAnalytics = "G-xxxxxxxxx"
 
 [params]
 # Meta description
-description = "A Tech Blog"
+description = "HuoQiu Tech"
 
 # Appearance settings
 theme = 'auto'
@@ -19,10 +19,12 @@ colorPalette = 'default'
 hideHeader = false
 
 # Intro on main page, content is markdown
-homeIntroTitle = 'Hi!'
+# homeIntroTitle = 'Hi!'
 homeIntroContent = """
-I am an Italian Software Engineer with a strong foundation in computer science and a passion for solving complex problems.
-I am interested in a range of topics, including algorithms, distributed systems, databases, and information retrieval.
+HuoQiu Tech has an elite team composed of senior game developers, creative designers, and technical experts.
+With their love and perseverance for games, they continuously explore and innovate, perfectly integrating cutting-edge technology and unique creativity to ensure that each game has a high-quality gaming experience.
+Whether it's an exciting action game, a brain-burning strategy game, or a role-playing game full of fantasy colors, HuoQiu Tech can accurately grasp the core elements of different types of games and create a gaming world in which players can immerse themselves.
+Since its establishment, the company has been committed to creating a variety of wonderful mobile games and computer games, bringing countless joys and surprises to players around the world.
 """
 
 # Collection to display on home
@@ -38,26 +40,26 @@ listDateFormat = '2 Jan 2006'
 breadcrumbs = true
 
 # Social icons
-[[params.social]]
-name = "linkedin"
-url = "https://www.linkedin.com/in/user/"
+# [[params.social]]
+# name = "linkedin"
+# url = "https://www.linkedin.com/in/user/"
 
-[[params.social]]
-name = "medium"
-url = "https://medium.com/@user"
+# [[params.social]]
+# name = "medium"
+# url = "https://medium.com/@user"
 
-[[params.social]]
-name = "github"
-url = "https://github.com/user"
+# [[params.social]]
+# name = "github"
+# url = "https://github.com/user"
 
 # Main menu pages
 [[params.menu]]
 name = "home"
 url = "/"
 
-[[params.menu]]
-name = "posts"
-url = "/posts"
+# [[params.menu]]
+# name = "posts"
+# url = "/posts"
 
 [[params.menu]]
 name = "about"
