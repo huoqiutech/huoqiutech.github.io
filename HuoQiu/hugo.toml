@@ -14,7 +14,7 @@ tag = 'tags'
 description = "HuoQiu Tech"
 
 showFooter = true
-footerContent = "Nanjing Huoqiu Network Technology Co., Ltd."
+footerContent = "Nanjing Huoqiu Network Technology Co., Ltd"
 
 # favicon = favicon.ico # 实际上的位置是static/favicon.ico
 
@@ -40,7 +40,7 @@ Since its establishment, the company has been committed to creating a variety of
 
 #### About
 
-> Company: Nanjing Huoqiu Network Technology Co., Ltd. | 南京火球网络科技有限公司
+> Company: Nanjing Huoqiu Network Technology Co., Ltd | 南京火球网络科技有限公司
 
 > D-U-N-S: 
 
