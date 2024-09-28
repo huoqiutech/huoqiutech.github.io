@@ -1,5 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("Script loaded on page:", window.location.pathname);
+    
     const languageToggle = document.getElementById('language-toggle');
+    if (languageToggle) {
+        console.log("Language toggle button found");
+    } else {
+        console.log("Language toggle button not found");
+        return; // 如果没有找到按钮，就退出脚本
+    }
+
     let currentLang = localStorage.getItem('language') || 'en';
 
     const translations = {
@@ -155,6 +164,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    function updateContent(lang) {
+        console.log("Updating content for language:", lang);
+        updateCommonElements(lang);
+
+        const currentPage = window.location.pathname.split('/').pop();
+        console.log("Current page:", currentPage);
+
+        if (currentPage === 'index.html' || currentPage === '') {
+            updateIndexContent(lang);
+        } else if (currentPage === 'about.html') {
+            updateAboutContent(lang);
+        }
+
+        // 只在首页更新表单验证
+        if (currentPage === 'index.html' || currentPage === '') {
+            updateFormValidation(lang);
+        }
+
+        localStorage.setItem('language', lang);
+    }
+
     function updateCommonElements(lang) {
         document.documentElement.lang = lang;
 
@@ -176,21 +206,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update page title
         const currentPage = window.location.pathname.split('/').pop();
         document.title = translations[lang].title[currentPage.replace('.html', '')] || translations[lang].title['index'];
-    }
-
-    function updateContent(lang) {
-        updateCommonElements(lang);
-
-        const currentPage = window.location.pathname.split('/').pop();
-
-        if (currentPage === 'index.html' || currentPage === '') {
-            updateIndexContent(lang);
-        } else if (currentPage === 'about.html') {
-            updateAboutContent(lang);
-        }
-
-        updateFormValidation(lang);
-        localStorage.setItem('language', lang);
     }
 
     function updateIndexContent(lang) {
@@ -228,53 +243,104 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateAboutContent(lang) {
-        document.querySelector('#about-us h1').textContent = translations[lang]['about-us'].title;
-        document.querySelector('#about-us p').textContent = translations[lang]['about-us'].content;
+        console.log("Updating about content for language:", lang);
 
-        document.querySelector('#our-vision h2').textContent = translations[lang]['our-vision'].title;
-        document.querySelector('#our-vision p').textContent = translations[lang]['our-vision'].content;
+        const aboutUsTitle = document.querySelector('#about-us h1');
+        const aboutUsContent = document.querySelector('#about-us p');
+        const ourVisionTitle = document.querySelector('#our-vision h2');
+        const ourVisionContent = document.querySelector('#our-vision p');
 
-        document.querySelector('#contact h2').textContent = translations[lang].contact.title;
+        if (aboutUsTitle) {
+            aboutUsTitle.textContent = translations[lang]['about-us'].title;
+            console.log("Updated about us title");
+        } else {
+            console.log("About us title element not found");
+        }
+
+        if (aboutUsContent) {
+            aboutUsContent.textContent = translations[lang]['about-us'].content;
+            console.log("Updated about us content");
+        } else {
+            console.log("About us content element not found");
+        }
+
+        if (ourVisionTitle) {
+            ourVisionTitle.textContent = translations[lang]['our-vision'].title;
+            console.log("Updated our vision title");
+        } else {
+            console.log("Our vision title element not found");
+        }
+
+        if (ourVisionContent) {
+            ourVisionContent.textContent = translations[lang]['our-vision'].content;
+            console.log("Updated our vision content");
+        } else {
+            console.log("Our vision content element not found");
+        }
+
+        const contactTitle = document.querySelector('#contact h2');
+        if (contactTitle) {
+            contactTitle.textContent = translations[lang].contact.title;
+            console.log("Updated contact title");
+        } else {
+            console.log("Contact title element not found");
+        }
+
         const contactInfo = document.querySelectorAll('.contact-info p');
         contactInfo.forEach((p, index) => {
-            p.innerHTML = `<strong>${translations[lang].contact.info[index][0]}：</strong>${translations[lang].contact.info[index][1]}`;
+            if (translations[lang].contact.info[index]) {
+                p.innerHTML = `<strong>${translations[lang].contact.info[index][0]}：</strong>${translations[lang].contact.info[index][1]}`;
+                console.log(`Updated contact info ${index}`);
+            } else {
+                console.log(`Contact info ${index} not found`);
+            }
         });
+
+        // Update form elements
+        updateFormValidation(lang);
     }
 
     function updateFormValidation(lang) {
         const form = document.getElementById('contact-form');
+        if (!form) {
+            console.log("Contact form not found, skipping form validation update");
+            return;
+        }
+
         const nameInput = form.querySelector('input[type="text"]');
         const emailInput = form.querySelector('input[type="email"]');
         const messageInput = form.querySelector('textarea');
 
         // Update form placeholders
-        nameInput.placeholder = translations[lang].contact.form.name;
-        emailInput.placeholder = translations[lang].contact.form.email;
-        messageInput.placeholder = translations[lang].contact.form.message;
-        form.querySelector('button[type="submit"]').textContent = translations[lang].contact.form.submit;
+        if (nameInput) nameInput.placeholder = translations[lang].contact.form.name;
+        if (emailInput) emailInput.placeholder = translations[lang].contact.form.email;
+        if (messageInput) messageInput.placeholder = translations[lang].contact.form.message;
+
+        const submitButton = form.querySelector('button[type="submit"]');
+        if (submitButton) submitButton.textContent = translations[lang].contact.form.submit;
 
         form.onsubmit = function(e) {
             e.preventDefault();
             let isValid = true;
 
-            if (nameInput.value.trim() === '') {
+            if (nameInput && nameInput.value.trim() === '') {
                 showError(nameInput, translations[lang].contact.form.nameRequired);
                 isValid = false;
             } else {
                 clearError(nameInput);
             }
 
-            if (emailInput.value.trim() === '') {
+            if (emailInput && emailInput.value.trim() === '') {
                 showError(emailInput, translations[lang].contact.form.emailRequired);
                 isValid = false;
-            } else if (!isValidEmail(emailInput.value)) {
+            } else if (emailInput && !isValidEmail(emailInput.value)) {
                 showError(emailInput, translations[lang].contact.form.emailInvalid);
                 isValid = false;
             } else {
                 clearError(emailInput);
             }
 
-            if (messageInput.value.trim() === '') {
+            if (messageInput && messageInput.value.trim() === '') {
                 showError(messageInput, translations[lang].contact.form.messageRequired);
                 isValid = false;
             } else {
@@ -341,7 +407,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Language toggle event listener
     languageToggle.addEventListener('click', function() {
+        console.log("Language toggle clicked");
         currentLang = currentLang === 'zh' ? 'en' : 'zh';
+        console.log("Switching to language:", currentLang);
         updateContent(currentLang);
     });
 
