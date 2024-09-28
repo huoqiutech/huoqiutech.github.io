@@ -1,0 +1,19 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* 黑色半透明背景 */
+  z-index: 1;  /* 确保overlay在背景之上,但在内容之下 */
+  pointer-events: none; /* 允许点击穿透 */
+}
+
+.bg-wrapper {
+  z-index: 0;
+}
+
+body > *:not(.bg-wrapper):not(.overlay) {
+  position: relative;
+  z-index: 2;
+}

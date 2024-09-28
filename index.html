@@ -16,6 +16,7 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+    <canvas id="background-canvas"></canvas>
     <div id="dynamic-background"></div>
     <header>
         <nav>
@@ -23,14 +24,16 @@
                 <li><a href="index.html" class="active">首页</a></li>
                 <li><a href="about.html">关于我们</a></li>
             </ul>
+            <button id="language-toggle">English</button>
         </nav>
     </header>
     
     <main>
         <section id="hero">
-            <h1 class="slogan">点燃游戏激情，创造无限可能</h1>
-            <div class="game-banner"></div>
-            <a href="#contact" class="cta-button">联系我们</a>
+            <div class="hero-content">
+                <h1 class="slogan">点燃游戏激情，创造无限可能</h1>
+                <a href="#contact" class="cta-button">联系我们</a>
+            </div>
         </section>
 
         <section id="about-summary">
@@ -96,6 +99,16 @@
         </div>
     </div>
 
+    <!-- 修改成功提示框 -->
+    <div id="success-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <p id="success-message">留言发送成功!</p>
+            <p id="countdown">3秒后自动关闭</p>
+        </div>
+    </div>
+
+    <script src="background.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

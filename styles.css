@@ -1,11 +1,22 @@
+/* 在文件开头添加以下样式 */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f0f0f0;
     overflow-x: hidden;
+    background-color: #fff; /* 改为白色背景 */
+    color: #333; /* 设置默认文本颜色 */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    /* 移除文本阴影 */
+}
+
+#background-canvas {
+    position: fixed; /* 改回 fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 #dynamic-background {
@@ -41,9 +52,11 @@ body {
 }
 
 header {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 0.5rem; /* 减小顶栏高度 */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: rgba(51, 51, 51, 0.8); /* 半透明深色背景 */
+    padding: 10px 0;
+    position: sticky; /* 使顶栏固定在顶部 */
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -58,8 +71,9 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #333;
+    color: white;
     text-decoration: none;
+    font-size: 16px;
 }
 
 nav ul li a.active {
@@ -68,8 +82,11 @@ nav ul li a.active {
 
 main {
     padding: 2rem;
-    position: relative;
-    z-index: 1;
+    margin: 2rem auto;
+    max-width: 1200px;
+    /* 移除以下两行 */
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
 #hero {
@@ -78,10 +95,8 @@ main {
 }
 
 .slogan {
-    font-size: 3rem;
-    margin-bottom: 1rem; /* 减小下边距 */
     color: #333;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .game-banner {
@@ -111,8 +126,8 @@ main {
 /* 其他样式保持不变 */
 
 footer {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #333;
+    background-color: rgba(51, 51, 51, 0.8); /* 半透明深色背景 */
+    color: white;
     text-align: center;
     padding: 1rem;
     position: relative;
@@ -127,7 +142,6 @@ h2 {
     background-color: #FFA500; /* 橙色 */
     color: white;
     padding: 5px 10px;
-    border-radius: 5px;
     text-align: center;
 }
 
@@ -165,7 +179,7 @@ h2 {
 
 .popup-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 30% auto; /* 调整为30%使弹窗更靠下 */
     padding: 20px;
     border: 1px solid #888;
     width: 300px;
@@ -176,7 +190,9 @@ h2 {
 
 .close-btn {
     color: #aaa;
-    float: right;
+    position: absolute; /* 改为绝对定位 */
+    top: 10px; /* 距离顶部10px */
+    right: 10px; /* 距离右侧10px */
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -187,4 +203,81 @@ h2 {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+}
+
+#language-toggle {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#language-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#countdown {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: block; /* 使错误消息占据整行 */
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#contact form input.error,
+#contact form textarea.error {
+    border-color: red; /* 给错误的输入框添加红色边框 */
+}
+
+/* 可能需要调整以下样式以适应错误消息 */
+#contact form input,
+#contact form textarea {
+    margin-bottom: 5px;
 }
