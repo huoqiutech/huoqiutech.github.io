@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const languageToggle = document.getElementById('language-toggle');
-    let currentLang = localStorage.getItem('language') || 'zh';
+    let currentLang = localStorage.getItem('language') || 'en';
 
     const translations = {
         'zh': {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     'submit': '发送',
                     'nameRequired': '请输入您的姓名',
                     'emailRequired': '请输入您的邮箱',
-                    'emailInvalid': '请输入有效的邮箱地址',
+                    'emailInvalid': '请输入有效的邮箱地址，包含@符号和域名',
                     'messageRequired': '请输入您的留言'
                 }
             },
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     'submit': 'Send',
                     'nameRequired': 'Please enter your name',
                     'emailRequired': 'Please enter your email',
-                    'emailInvalid': 'Please enter a valid email address',
+                    'emailInvalid': 'Please enter a valid email address, including @ symbol and domain',
                     'messageRequired': 'Please enter your message'
                 }
             },

@@ -91,12 +91,19 @@ main {
 
 #hero {
     text-align: center;
-    padding: 2rem 0; /* 减小上下内边距 */
+    padding: 0rem 0; /* 减小上下内边距 */
 }
 
 .slogan {
-    color: #333;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    font-size: 2.5rem; /* 增大字体大小 */
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3); /* 添加渐变色背景 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* 使文字颜色透明，显示背景色 */
+    text-shadow: none; /* 移除文字阴影 */
+    padding: 2px 0; /* 减小内边距 */
+    margin-top: 0; /* 移除顶部外边距 */
 }
 
 .game-banner {
@@ -126,10 +133,10 @@ main {
 /* 其他样式保持不变 */
 
 footer {
-    background-color: rgba(51, 51, 51, 0.8); /* 半透明深色背景 */
+    background-color: rgba(51, 51, 51, 1); /* 半透明深色背景，与顶栏一致 */
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 2px 0px; /* 调整padding以匹配顶栏高度 */
     position: relative;
     bottom: 0;
     width: 100%;
