@@ -133,8 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     ['Postal Code', '210000'],
                     ['Phone', '18795885030'],
                     ['Email', '184141795@qq.com | hejc1990@gmail.com'],
-                    [' ', ' '],
-                    [' ', ' ']
+                    ['Chinese Name', '南京火球网络科技有限公司'],
+                    ['Chinese Address', '江苏省南京市江宁滨江开发区盛安大道739号']
                 ],
                 'form': {
                     'name': 'Your Name',
