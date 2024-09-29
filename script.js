@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     'messageRequired': '请输入您的留言'
                 }
             },
-            'footer': '© 2023 南京火球网络科技有限公司。保留所有权利。',
+            'footer': '© 2024 南京火球网络科技有限公司。保留所有权利。',
             'popup': {
                 'success': '留言发送成功!',
                 'countdown': '秒后自动关闭'
@@ -128,9 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'title': 'Contact Us',
                 'info': [
                     ['Company Name', 'Nanjing Huoqiu Network Technology Co., Ltd.'],
-                    ['Chinese Name', '南京火球网络科技有限公司'],
                     ['Company Address', 'No. 739 Shengan Avenue, Jiangning Binjiang Development Zone, Nanjing, Jiangsu, China'],
-                    ['Chinese Address', '江苏省南京市江宁滨江开发区盛安大道739号'],
                     ['Unified Social Credit Code', '91320115MAE0E128XP'],
                     ['Postal Code', '210000'],
                     ['Phone', '18795885030'],
@@ -147,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     'messageRequired': 'Please enter your message'
                 }
             },
-            'footer': '© 2023 Nanjing Huoqiu Network Technology Co., Ltd. All rights reserved.',
+            'footer': '© 2024 Nanjing Huoqiu Network Technology Co., Ltd. All rights reserved.',
             'popup': {
                 'success': 'Message sent successfully!',
                 'countdown': 'seconds to auto-close'
