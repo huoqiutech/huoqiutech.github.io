@@ -54,12 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 'info': [
                     ['企业名称', '南京火球网络科技有限公司'],
                     ['英文名称', 'Nanjing Huoqiu Network Technology Co., Ltd.'],
+                    ['企业地址', '江苏省南京市江宁滨江开发区盛安大道739号'],
+                    ['英文地址', 'No. 739 Shengan Avenue, Jiangning Binjiang Development Zone, Nanjing, Jiangsu, China'],
                     ['统一社会信用代码', '91320115MAE0E128XP'],
-                    ['地址', '江苏省南京市江宁滨江开发区沈安大道739号'],
-                    ['Address', 'No. 739 Shengan Avenue, Jiangning Binjiang Development Zone, Nanjing, Jiangsu, China'],
                     ['邮编', '210000'],
                     ['电话', '18795885030'],
-                    ['邮箱', '184141795@qq.com']
+                    ['邮箱', '184141795@qq.com | hejc1990@gmail.com']
                 ],
                 'form': {
                     'name': '您的姓名',
@@ -129,12 +129,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 'info': [
                     ['Company Name', 'Nanjing Huoqiu Network Technology Co., Ltd.'],
                     ['Chinese Name', '南京火球网络科技有限公司'],
+                    ['Company Address', 'No. 739 Shengan Avenue, Jiangning Binjiang Development Zone, Nanjing, Jiangsu, China'],
+                    ['Chinese Address', '江苏省南京市江宁滨江开发区盛安大道739号'],
                     ['Unified Social Credit Code', '91320115MAE0E128XP'],
-                    ['Address', 'No. 739 Shengan Avenue, Jiangning Binjiang Development Zone, Nanjing, Jiangsu, China'],
-                    ['Chinese Address', '江苏省南京市江宁滨江开发区沈安大道739号'],
                     ['Postal Code', '210000'],
                     ['Phone', '18795885030'],
-                    ['Email', '184141795@qq.com']
+                    ['Email', '184141795@qq.com | hejc1990@gmail.com']
                 ],
                 'form': {
                     'name': 'Your Name',
